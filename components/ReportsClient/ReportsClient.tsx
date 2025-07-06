@@ -5,13 +5,13 @@ import ChartOne from "@/components/Charts/ChartOne";
 import ChartThree from "@/components/Charts/ChartThree";
 import ChartTwo from "@/components/Charts/ChartTwo";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLeads } from "../app/store/leads/leadsSlice";
+import { fetchLeads } from "@/app/store/leads/leadsSlice";
 import { useEffect, useState } from "react";
-import { fetchAgents } from "../app/store/agents/agentsSlice";
+import { fetchAgents } from "@/app/store/agents/agentsSlice";
 import {
   fetchClosedLeads,
   fetchPipeline,
-} from "../app/store/reports/reportsSlice";
+} from "@/app/store/reports/reportsSlice";
 
 const ReportsClient = () => {
    const [selectedStatus, setSelectedStatus] = useState("");
