@@ -1,88 +1,109 @@
-# TailAdmin Next.js - Free Next.js Tailwind Admin Dashboard Template
+Codeflix CRM - Lead Generation Dashboard
+Codeflix CRM is a modern lead generation and management dashboard built with Next.js, Tailwind CSS, and Redux Toolkit. It leverages the powerful features of React 18, Next.js App Router, and TypeScript (optional) to help businesses manage leads, track progress, and streamline communication through a clean and user-friendly admin panel.
 
-TailAdmin is a free and open-source admin dashboard template built on **Next.js and Tailwind CSS** providing developers with everything they need to create a feature-rich and data-driven: back-end, dashboard, or admin panel solution for any sort of web project.
+⚙️ Features
+💼 Lead Creation, Editing, and Deletion
 
-[![tailwind nextjs admin template](https://github.com/TailAdmin/free-nextjs-admin-dashboard/blob/main/tailadmin-nextjs.jpg)](https://nextjs-demo.tailadmin.com/)
+📈 Visual Reports (Lead Status Overview, Pipeline, Agent Performance)
 
-With TailAdmin Next.js, you get access to all the necessary dashboard UI components, elements, and pages required to build a high-quality and complete dashboard or admin panel. Whether you're building a dashboard or admin panel for a complex web application or a simple website. 
+💬 Comment System for Leads
 
-TailAdmin utilizes the powerful features of **Next.js 13** and common features of Next.js such as server-side rendering (SSR), static site generation (SSG), and seamless API route integration. Combined with the advancements of **React 18** and the robustness of **TypeScript**, TailAdmin is the perfect solution to help get your project up and running quickly.
+🧑‍💼 Agent-wise Lead Assignment
 
-### [✨ Visit Website](https://tailadmin.com/)
-### [🚀 PRO Demo](https://nextjs-demo.tailadmin.com/)
-### [🚀 FREE Demo](https://nextjs-free-demo.tailadmin.com/)
+📊 Dynamic Charts (using ApexCharts)
 
-### TailAdmin Next.js PRO vs TailAdmin Next.js FREE Comparison 📊
+🌐 API Integration (Node.js/Express backend)
 
-#### [TailAdmin Next.js PRO](https://nextjs-demo.tailadmin.com/)
-- 4 Unique Dashboards: Analytics, Ecommerce, Marketing, and CRM (More will be added)
-- 120+ Dashboard UI Components
-- 200+ Total UI Elements
-- 45+ HTML Files
-- All Essential Elements and Files
-- Full Figma Design Source - As Shown on Demo
-___
+🧠 Redux Toolkit for state management
 
-#### [TailAdmin Next.js FREE](https://free-nextjs-demo.tailadmin.com/)
-- 1 Unique Dashboard
-- 30+ Dashboard UI Components
-- 50+ Total UI Elements 
-- 10+ HTML Files
-- TypeScript Support
-- Basic UI Kit Elements and Files
-- Figma Design Source - Free Sample
-___
+🎨 Fully responsive and styled with Tailwind CSS
 
-### [⬇️ Download Now](https://tailadmin.com/download)
+🔐 Basic auth setup-ready (optional)
 
-### [⚡ Get PRO Version](https://tailadmin.com/pricing)
+🚀 Tech Stack
+Frontend: Next.js 13+, Tailwind CSS, React 18
 
-### [📄 Documentation/Installation](https://tailadmin.com/docs)
+State Management: Redux Toolkit
 
-### [🖌️ TailAdmin Figma Free Sample](https://www.figma.com/community/file/1214477970819985778)
+Charts: ApexCharts
 
-### [👉 TailAdmin HTML Version](https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template)
+Backend: REST API (Node.js/Express)
 
+Database: MongoDB (recommended)
 
-## Installation
+Optional: TypeScript, JWT Auth, Figma design
 
-Here are the steps you need to follow to install the dependencies.
+📦 Installation
+bash
+Copy
+Edit
+# 1. Clone the repo
+git clone https://github.com/DevenderneoG/codeflix-frontend
 
-1. Download and extract the template from Next.js Templates.
+# 2. Move into the project
+cd codeflix-crm
 
-2. After that **cd** into the template directory then run this command to install all the dependencies
-
-```
+# 3. Install dependencies
 npm install
-```
-or
-
-```
+# or
 yarn install
-```
 
-3. Now run this command to start the developement server
-
-```
+# 4. Run the development server
 npm run dev
-```
-
-or 
-
-```
+# or
 yarn dev
-```
+Make sure your backend server is running and .env.local contains the correct API base URLs.
 
+📁 Project Structure
+bash
+Copy
+Edit
+.
+├── app/
+│   ├── leads/           # Lead listing, add/edit pages
+│   ├── reports/         # Dashboard charts
+│   └── components/      # Reusable UI components
+├── app/store/           # Redux Toolkit slices
+├── public/              # Static assets
+└── tailwind.config.js   # Tailwind config
+📊 Dashboard Preview
+Key dashboard visualizations include:
 
-## Free Admin Dashboard Template for Next.js Built-with Tailwind CSS, React 18 and TypeScript
-TailAdmin Next.js is a free dashboard template, which uses Tailwind CSS, is a great starting point for dashboard UI. This template uses the Next.js JavaScript framework and the easy-to-use Tailwind CSS framework. The Tailwind CSS and Next.js Dashboard Template comes with ready-made components like navigation menus, charts, tables, and forms. These components can be easily adjusted and added to any Next.js web application.
+🟢 Closed vs Pipeline Leads
 
-TailAdmin for Next.js provides all essential Next.js + Tailwind CSS UI components that can be copied and pasted directly into your dashboard projects. The range of components includes charts, graphs, navbars, tabs, buttons, cards, tables, profiles, forms, modals, app pages, calendars, web app example templates, and more, all coded for Next.js React and styled using Tailwind CSS.
+📊 Status Distribution
 
-If you're on the hunt for a top-quality Next.js-Tailwind Dashboard, Admin Panel Template, or UI Kit, TailAdmin is the perfect choice for you!
+👤 Leads per Agent
 
-### 📄 License
-TailAdmin Next.js Free is 100% free and open-source; feel free to use it with your personal and commercial projects.
+🛠 Development Notes
+All data is managed through Redux Toolkit with async thunks.
 
-### 💜 Support
-If you like the template, please star this repository to inspire the team to create more stuff like this and reach more users like you!
+UI is built using utility-first Tailwind CSS classes.
+
+Backend must expose endpoints like:
+
+GET /leads
+
+POST /leads
+
+DELETE /leads/:id
+
+GET /report/last-week
+
+etc.
+
+📜 License
+This project is built on top of TailAdmin's free template, but all Codeflix customizations are open-source and MIT licensed. You can use, modify, or redistribute freely.
+
+💡 Inspiration
+Codeflix CRM aims to simplify lead tracking for small teams and agencies by providing a clean and effective interface powered by Next.js.
+
+Let me know if you'd like:
+
+A CONTRIBUTING.md or .env.example file
+
+Deployment instructions (e.g., Vercel or Netlify)
+
+Integration notes for your backend repo
+
+Happy coding!
