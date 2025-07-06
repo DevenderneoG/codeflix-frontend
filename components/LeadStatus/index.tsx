@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/app/store";
+import { RootState } from "@/app/store/store";
 import { useState, useMemo, useEffect } from "react";
 import { fetchAgents } from "../../app/store/agents/agentsSlice";
 

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "next/navigation";
 import { fetchLeadStatus } from "@/app/store/leads/leadsSlice";
-import { RootState } from "@/app/store"; // Make sure this is correctly imported
+import { RootState } from "@/app/store/store";
 import LeadStatus from "@/components/LeadStatus";
 
 const LeadStatusPage = () => {
