@@ -34,7 +34,7 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
           <h4 className="text-title-md font-bold text-black dark:text-white">
             {total}
           </h4>
-          {/* <span className="text-lg font-medium">{title}</span> */}
+          <span className="text-lg font-medium">{title}</span>
         </div>
 
         {/* <span

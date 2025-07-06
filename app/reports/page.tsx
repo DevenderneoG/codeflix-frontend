@@ -1,4 +1,3 @@
-"use client";
 
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import ChartOne from "@/components/Charts/ChartOne";
@@ -15,7 +14,7 @@ import {
 } from "../../app/store/reports/reportsSlice";
 
 export const metadata: Metadata = {
-  title: "Reports Page | Next.js E-commerce Dashboard Template",
+  title: "Reports Page | Next.js E-commerce Dashboard Template",  
   description: "This is Calendar page for TailAdmin Next.js",
   // other metadata
 };
