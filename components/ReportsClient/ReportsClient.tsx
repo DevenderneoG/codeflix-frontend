@@ -54,7 +54,7 @@ const ReportsClient = () => {
           <div className="col-span-12">
             <ChartTwo filteredLeads={filteredLeads} agents={agents} />
           </div>
-          {/* <ChartFour filteredLeads={filteredLeads} agents={agents} /> */}
+         
         </div>
       </>
     );
