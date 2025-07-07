@@ -9,6 +9,7 @@ import {
 } from "../../app/store/leads/leadsSlice";
 import { fetchAgents } from "../../app/store/agents/agentsSlice";
 import { useParams, useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 
 const AddLead = ({ isEditMode = false }: { isEditMode?: boolean }) => {
   const { id } = useParams(); // if `id` exists => edit mode
@@ -18,7 +19,7 @@ const AddLead = ({ isEditMode = false }: { isEditMode?: boolean }) => {
   const { selectedLead } = useSelector((state: any) => state.lead);
   const { agents } = useSelector((state: any) => state.agent);
   const tagOptions = ["High Value", "Follow-up", "Cold", "Interested"];
-  
+
   const [formData, setFormData] = useState({
     name: "",
     source: "",
@@ -62,20 +63,21 @@ const AddLead = ({ isEditMode = false }: { isEditMode?: boolean }) => {
     try {
       if (id) {
         await dispatch(updateLead({ id, updatedData: formData })).unwrap();
-        alert("Lead updated!");
+        toast.success("Lead updated successfully!");
       } else {
         await dispatch(addLeads(formData)).unwrap();
-        alert("Lead added!");
+        toast.success("Lead added successfully!");
       }
       router.push("/");
     } catch (err: any) {
       console.error(err);
-      alert("Failed to submit lead: " + (err.message || "Unknown error"));
+      toast.error("Failed to submit lead: " + (err.message || "Unknown error"));
     }
   };
 
   return (
     <>
+      <Toaster position="top-right" reverseOrder={false} />
       <Breadcrumb pageName={isEditMode ? "Edit Lead" : "Add New Lead"} />
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
@@ -198,7 +200,7 @@ const InputField = ({
       value={value}
       required={required}
       onChange={onChange}
-      className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input"
+      className="h-11 w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 pr-11 text-sm shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800 text-gray-400 dark:text-gray-400 dark:bg-dark-900"
     />
   </div>
 );
@@ -206,25 +208,43 @@ const InputField = ({
 const SelectField = ({ label, name, value, onChange, options }: any) => (
   <div className="mb-4.5">
     <label className="mb-2.5 block text-black dark:text-white">{label}</label>
-    <select
-      name={name}
-      value={value}
-      onChange={onChange}
-      className="w-full rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input"
-    >
-      <option value="">Select {label}</option>
-      {options.map((opt: any) =>
-        typeof opt === "string" ? (
-          <option key={opt} value={opt}>
-            {opt}
-          </option>
-        ) : (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        )
-      )}
-    </select>
+    <div className="relative w-full">
+      <select
+        name={name}
+        value={value}
+        onChange={onChange}
+        className="h-11 w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 pr-11 text-sm shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800 text-gray-400 dark:text-gray-400 dark:bg-dark-900"
+      >
+        <option value="">Select {label}</option>
+        {options.map((opt: any) =>
+          typeof opt === "string" ? (
+            <option key={opt} value={opt}>
+              {opt}
+            </option>
+          ) : (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          )
+        )}
+      </select>
+      <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none right-3 top-1/2 dark:text-gray-400">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            d="M4.792 7.396 10 12.604l5.208-5.208"
+          ></path>
+        </svg>
+      </span>
+    </div>
   </div>
 );
 

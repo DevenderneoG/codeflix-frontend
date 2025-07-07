@@ -43,7 +43,7 @@ const TableOne = ({ agents } : any) => {
             key={key}
           >
             <div className="flex items-center gap-3 p-2.5 xl:p-5">
-              <p className="hidden text-black dark:text-white sm:block">
+              <p className="hidden text-black dark:text-white sm:block font-bold">
                 <Link href={`/agents/${agent._id}`}>{agent.name}</Link>
               </p>
             </div>

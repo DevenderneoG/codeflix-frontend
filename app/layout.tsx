@@ -8,7 +8,7 @@ import Loader from "@/components/common/Loader";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import { Provider } from "react-redux";
-import {store} from "../app/store/store"
+import store from "../app/store/store"
 
 export default function RootLayout({
   children,
