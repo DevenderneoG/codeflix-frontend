@@ -20,7 +20,7 @@ const TableOne = ({ agents } : any) => {
       </div>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+        <div className="grid grid-cols-5 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
           <div className="p-2.5 xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
               Name
@@ -35,7 +35,7 @@ const TableOne = ({ agents } : any) => {
 
         {agents.map((agent, key) => (
           <div
-            className={`grid grid-cols-3 sm:grid-cols-5 ${
+            className={`grid grid-cols-5 sm:grid-cols-5 ${
               key === agents.length - 1
                 ? ""
                 : "border-b border-stroke dark:border-strokedark"
