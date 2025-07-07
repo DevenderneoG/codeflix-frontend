@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLeadDetails } from "@/app/store/leads/leadsSlice";
 import { fetchComments } from "@/app/store/comments/commentSlice";
-import { RootState, AppDispatch } from "@/app/store/store";
+import { AppDispatch } from "@/app/store/store";
 import Comments from "@/components/Comments";
 
 const LeadDetailsPage = () => {
@@ -14,16 +14,16 @@ const LeadDetailsPage = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const selectedLead = useSelector(
-    (state: RootState) => state.lead.selectedLead
+    (state: any) => state.lead.selectedLead
   );
-  const status = useSelector((state: RootState) => state.lead.status);
-  const error = useSelector((state: RootState) => state.lead.error);
+  const status = useSelector((state: any) => state.lead.status);
+  const error = useSelector((state: any) => state.lead.error);
 
   const {
     comments,
     status: commentsStatus,
     error: commentsError,
-  } = useSelector((state: RootState) => state.comment);
+  } = useSelector((state: any) => state.comment);
 
   useEffect(() => {
     if (id) {

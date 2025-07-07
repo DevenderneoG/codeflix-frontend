@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "next/navigation";
 import { fetchLeadStatus } from "@/app/store/leads/leadsSlice";
-import { RootState } from "@/app/store/store";
 import LeadStatus from "@/components/LeadStatus";
 
 const LeadStatusPage = () => {
@@ -11,9 +10,9 @@ const LeadStatusPage = () => {
   const params = useParams();
   const statusname = params.statusname as string;
 
-  const statusLeads = useSelector((state: RootState) => state.lead.statusLeads);
-  const status = useSelector((state: RootState) => state.lead.status);
-  const error = useSelector((state: RootState) => state.lead.error);
+  const statusLeads = useSelector((state: any) => state.lead.statusLeads);
+  const status = useSelector((state: any) => state.lead.status);
+  const error = useSelector((state: any) => state.lead.error);
 
   useEffect(() => {
     if (statusname) {

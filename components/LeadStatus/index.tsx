@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/app/store/store";
 import { useState, useMemo, useEffect } from "react";
 import { fetchAgents } from "../../app/store/agents/agentsSlice";
 
@@ -25,9 +24,9 @@ const LeadStatus = () => {
 
   // Get unique agent IDs and priorities
   const uniqueAgentIds = [
-    ...new Set(statusLeads.map((lead) => lead.salesAgent)),
+    ...new Set(statusLeads.map((lead: { salesAgent: any; }) => lead.salesAgent)),
   ];
-  const priorities = [...new Set(statusLeads.map((lead) => lead.priority))];
+  const priorities = [...new Set(statusLeads.map((lead: { priority: any; }) => lead.priority))];
 
   // Apply filter and sort
   const filteredLeads = useMemo(() => {
