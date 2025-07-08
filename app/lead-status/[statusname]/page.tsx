@@ -42,7 +42,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "next/navigation";
 import { fetchLeadStatus } from "@/app/store/leads/leadsSlice";
 import LeadStatus from "@/components/LeadStatus";
-import { useAppDispatch } from "@/app/hooks"; // <-- import this
+import { useAppDispatch } from "../../store/hooks"; // <-- import this
 
 const LeadStatusPage = () => {
   const dispatch = useAppDispatch(); // <-- use typed dispatch
